@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,23 +17,29 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
-public class TestController{
+public class TestController {
 
     @Autowired
     IbkdataRepository ibkdataRespository;
-    
+
     @GetMapping("/main")
-    public String main(){
+    public String main() {
         List<Ibkdata> list = prueba("25");
-        Ibkdata prueba = list.get(1);
-       return prueba.getRuc();
+        int n = list.size();
+        String cadena = "";
+        for (int i = 0; i < n; i++) {
+            cadena = cadena + list.get(i).getRuc() + " ";
+        }
+
+        return cadena;
     }
 
     @GetMapping("/sql")
-    public List<Ibkdata> sql(){
+    public List<Ibkdata> sql() {
         return ibkdataRespository.findAll();
     }
-    public List<Ibkdata> prueba(String string){
+
+    public List<Ibkdata> prueba(String string) {
         return ibkdataRespository.findprueba(string);
     }
 }
