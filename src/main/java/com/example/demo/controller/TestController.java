@@ -22,7 +22,7 @@ public class TestController{
     IbkdataRepository ibkdataRespository;
     
     @GetMapping("/test")
-    public String test(){
+    public String main(){
         List<Ibkdata> list = sql();
         Ibkdata prueba = list.get(1);
        return prueba.getRuc();
