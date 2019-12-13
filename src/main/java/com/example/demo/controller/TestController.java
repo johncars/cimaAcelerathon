@@ -23,7 +23,9 @@ public class TestController{
     
     @GetMapping("/test")
     public String test(){
-       return sql().toString();
+        List<Ibkdata> list = sql();
+        Ibkdata prueba = list.get(1);
+       return prueba.getRuc();
     }
 
     @GetMapping("/sql")

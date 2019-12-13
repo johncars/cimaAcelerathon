@@ -5,11 +5,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ibk_data")
 public class Ibkdata {
-    
+
     @Id
     private String ruc;
 
-    public Ibkdata() {  }
+    public Ibkdata() {
+    }
 
     public Ibkdata(String ruc) {
         this.setRuc(ruc);
