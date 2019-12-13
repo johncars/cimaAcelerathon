@@ -22,5 +22,7 @@ public class IbkDataCn{
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
-    
+      public void cualquiercosa(String ruc) {
+        this.ruc = ruc;
+    }
 }
