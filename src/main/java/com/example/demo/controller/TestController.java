@@ -23,7 +23,7 @@ public class TestController{
     
     @GetMapping("/main")
     public String main(){
-        List<Ibkdata> list = sql();
+        List<Ibkdata> list = prueba("25");
         Ibkdata prueba = list.get(1);
        return prueba.getRuc();
     }
@@ -31,5 +31,8 @@ public class TestController{
     @GetMapping("/sql")
     public List<Ibkdata> sql(){
         return ibkdataRespository.findAll();
+    }
+    public List<Ibkdata> prueba(String string){
+        return ibkdataRespository.findprueba(string);
     }
 }
