@@ -4,14 +4,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ibk_data_cn")
-public class IbkLoanCn{
+public class IbkDataCn{
     
     @Id
     private String ruc;
 
-    public IbkLoanCn() {  }
+    public IbkDataCn() {  }
 
-    public IbkLoanCn(String ruc) {
+    public IbkDataCn(String ruc) {
         this.setRuc(ruc);
     }
 
