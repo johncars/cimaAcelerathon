@@ -9,9 +9,9 @@ public class IbkLoanDebt{
     @Id
     private String ruc;
 
-    public Ibkdata() {  }
+    public IbkLoanDebt() {  }
 
-    public Ibkdata(String ruc) {
+    public IbkLoanDebt(String ruc) {
         this.setRuc(ruc);
     }
 

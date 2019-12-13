@@ -3,15 +3,15 @@ package com.example.demo.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ibk_loan_calendar")
-public class IbkLoanCalendar {
+@Table(name = "ibk_data_cn")
+public class IbkLoanCn{
     
     @Id
     private String ruc;
 
-    public IbkLoanCalendar() {  }
+    public IbkLoanCn() {  }
 
-    public IbkLoanCalendar(String ruc) {
+    public IbkLoanCn(String ruc) {
         this.setRuc(ruc);
     }
 
@@ -22,5 +22,5 @@ public class IbkLoanCalendar {
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
-
+    
 }
