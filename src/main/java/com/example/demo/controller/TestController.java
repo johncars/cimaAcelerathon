@@ -21,7 +21,7 @@ public class TestController{
     @Autowired
     IbkdataRepository ibkdataRespository;
     
-    @GetMapping("/test")
+    @GetMapping("/main")
     public String main(){
         List<Ibkdata> list = sql();
         Ibkdata prueba = list.get(1);
