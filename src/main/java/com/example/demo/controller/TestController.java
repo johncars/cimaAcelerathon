@@ -10,7 +10,7 @@ import com.example.demo.entity.IbkLoanCalendar;
 import com.example.demo.repository.IbkLoanDebtRepository;
 import com.example.demo.entity.IbkLoanDebt;
 import com.example.demo.repository.IbkdataCnRepository;
-import com.example.demo.entity.IbkdataCn;
+import com.example.demo.entity.IbkDataCn;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +23,7 @@ public class TestController{
     
     @GetMapping("/test")
     public String test(){
-       return sql();
+       return sql().toString();
     }
 
     @GetMapping("/sql")
