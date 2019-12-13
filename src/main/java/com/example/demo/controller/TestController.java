@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import com.example.demo.repository.IbkdataRepository;
 import com.example.demo.entity.Ibkdata;
+import com.example.demo.repository.IbkLoanCalendarRepository;
+import com.example.demo.entity.IbkLoanCalendar;
+import com.example.demo.repository.IbkLoanDebtRepository;
+import com.example.demo.entity.IbkLoanDebt;
+import com.example.demo.repository.IbkdataCnRepository;
+import com.example.demo.entity.IbkdataCn;
 import java.util.List;
 import java.util.Map;
 

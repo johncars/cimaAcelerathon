@@ -7,6 +7,6 @@ import com.example.demo.entity.IbkdataCn;
 import java.util.List;
 
 @Repository
-public interface IbkdataRepository extends JpaRepository<IbkLoanCalendar, Integer> {
+public interface IbkdataCnRepository extends JpaRepository<IbkLoanCalendar, Integer> {
 
 }
