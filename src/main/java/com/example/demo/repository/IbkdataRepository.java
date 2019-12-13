@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IbkdataRepository extends JpaRepository<Ibkdata, Integer> {
-    @Query("select RUC from ibk_data i where i.FINAL_RATE = ?1") 
+    @Query(value = "select * from ibk_data i where i.FINAL_RATE = ?1", nativeQuery = true)
     List<Ibkdata> findprueba(String j);
 }
