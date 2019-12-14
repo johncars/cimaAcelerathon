@@ -31,6 +31,8 @@ public class TestController {
 
     @Autowired
     IbkdataRepository ibkdataRespository;
+    @Autowired
+    TFormularioRepository tFormularioRepository;
 
     @GetMapping("/main")
     public String main(String json) {
@@ -56,7 +58,12 @@ public class TestController {
 
     @GetMapping("/formulario")
     public void formulario(Formulario formulario) {
-        System.out.println(formulario.getCorreo());
+        String correo = formulario.getCorreo();
+        String dni = formulario.getDni();
+        String celular = formulario.getCelular();
+        String visa = formulario.getVisa();
+        String ruc = formulario.getRuc();
+        tFormularioRepository.setnewFormulario(correo, dni, celular, visa, ruc);
     }
 
     @GetMapping("/sql")
