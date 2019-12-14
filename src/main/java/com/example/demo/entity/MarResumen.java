@@ -12,8 +12,8 @@ public class MarResumen {
     private String ruc;
     @Column(name = "CUOTA")
     private String cuota;
-    @Column(name = "MONTO_DESEMBOLSO")
-    private double monto;
+    @Column(name = "MONTO_DESEMBOLSO_F")
+    private String monto;
     @Column(name = "TASA_DESEMBOLSO")
     private String tasa;
     @Column(name = "CODIGO")
@@ -22,7 +22,6 @@ public class MarResumen {
     private String motivo;
     @Column(name = "CUENTA_NEGOCIO")
     private String cn;
-
     public MarResumen() {
     }
 
@@ -34,11 +33,11 @@ public class MarResumen {
         this.cuota = cuota;
     }
 
-    public double getMonto() {
+    public String getMonto() {
         return monto;
     }
 
-    public void setMonto(final double monto) {
+    public void setMonto(final String monto) {
         this.monto = monto;
     }
 
@@ -73,7 +72,6 @@ public class MarResumen {
     public void setRuc(final String ruc) {
         this.ruc = ruc;
     }
-
     public String getCN() {
         return cn;
     }
@@ -82,7 +80,7 @@ public class MarResumen {
         this.cn = cn;
     }
 
-    public MarResumen(final String ruc, final String motivo, final String codigo, final String tasa, final double monto,
+    public MarResumen(final String ruc, final String motivo, final String codigo, final String tasa, final String monto,
             final String cuota) {
         this.ruc = ruc;
         this.motivo = motivo;
