@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface MarResumenRepository extends JpaRepository<MarResumen, String> {
 
-    @Query(value = "SELECT CUOTA,MONTO_DESEMBOLSO,TASA_DESEMBOLSO,CODIGO,CUENTA_NEGOCIO,MOTIVO_NO_APROBADO FROM MAR_RESUMEN WHERE RUC==?1", nativeQuery = true)
+    @Query(value = "SELECT CUOTA,MONTO_DESEMBOLSO,TASA_DESEMBOLSO,CODIGO,CUENTA_NEGOCIO,MOTIVO_NO_APROBADO FROM mar_resumen WHERE RUC==?1", nativeQuery = true)
     List<MarResumen> getValidacion(String ruc);
 }
