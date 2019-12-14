@@ -20,6 +20,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -57,14 +59,18 @@ public class TestController {
     }
 
     @GetMapping("/formulario")
-    public void formulario(Formulario formulario) {
+    public void formulario(Formulario formulario) throws ParseException {
         String correo = formulario.getCorreo();
         String dni = formulario.getDni();
         String celular = formulario.getCelular();
         String visa = formulario.getVisa();
         String ruc = formulario.getRuc();
         String fecha = formulario.getfecha();
-        tFormularioRepository.setnewFormulario(correo, dni, celular, visa, ruc, fecha);
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd");
+        java.util.Date date = sdf1.parse(fecha);
+        java.sql.Date sqlStartDate = new java.sql.Date(date.getTime()); 
+        TFormulario form = new TFormulario(ruc,dni,celular,correo,visa,sqlStartDate);
+        tFormularioRepository.save(form);
     }
 
     @GetMapping("/sql")
