@@ -12,6 +12,8 @@ import com.example.demo.repository.IbkLoanDebtRepository;
 import com.example.demo.entity.IbkLoanDebt;
 import com.example.demo.repository.IbkdataCnRepository;
 import com.example.demo.entity.IbkDataCn;
+import com.example.demo.repository.TFormularioRepository;
+import com.example.demo.entity.TFormulario;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import java.io.FileInputStream;
@@ -50,6 +52,11 @@ public class TestController {
             return "Hubo un error";
         }
 
+    }
+
+    @GetMapping("/formlario")
+    public void formulario(String[] args) {
+        System.out.println(args);
     }
 
     @GetMapping("/sql")
