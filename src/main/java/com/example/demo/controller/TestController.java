@@ -63,7 +63,8 @@ public class TestController {
         String celular = formulario.getCelular();
         String visa = formulario.getVisa();
         String ruc = formulario.getRuc();
-        tFormularioRepository.setnewFormulario(correo, dni, celular, visa, ruc);
+        String fecha = formulario.getfecha();
+        tFormularioRepository.setnewFormulario(correo, dni, celular, visa, ruc, fecha);
     }
 
     @GetMapping("/sql")
@@ -82,6 +83,7 @@ class Formulario {
     private String celular;
     private String ruc;
     private String visa;
+    private String fecha;
 
     public String getCorreo() {
         return correo;
@@ -93,6 +95,14 @@ class Formulario {
 
     public String getDni() {
         return dni;
+    }
+
+    public void setfecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getfecha() {
+        return fecha;
     }
 
     public void setDni(String dni) {
