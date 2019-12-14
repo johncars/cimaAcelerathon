@@ -55,7 +55,7 @@ public class TestController {
     }
 
     @GetMapping("/formulario")
-    public void formulario(String[] args) {
+    public void formulario(String args) {
         System.out.println(args);
     }
 
