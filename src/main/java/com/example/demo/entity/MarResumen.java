@@ -22,6 +22,9 @@ public class MarResumen {
     private String motivo;
     @Column(name = "CUENTA_NEGOCIO")
     private String cn;
+    @Column(name = "TIPO_CLIENTE")
+    private String tipo;
+
     public MarResumen() {
     }
 
@@ -72,6 +75,7 @@ public class MarResumen {
     public void setRuc(final String ruc) {
         this.ruc = ruc;
     }
+
     public String getCN() {
         return cn;
     }
@@ -80,14 +84,23 @@ public class MarResumen {
         this.cn = cn;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(final String tipo) {
+        this.tipo = tipo;
+    }
+
     public MarResumen(final String ruc, final String motivo, final String codigo, final String tasa, final String monto,
-            final String cuota) {
+            final String cuota, final String tipo) {
         this.ruc = ruc;
         this.motivo = motivo;
         this.codigo = codigo;
         this.tasa = tasa;
         this.monto = monto;
         this.cuota = cuota;
+        this.tipo = tipo;
     }
 
 }
