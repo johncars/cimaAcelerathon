@@ -22,8 +22,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import com.google.auth.oauth2.AccessToken;
+
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value = "/api/v1", method = RequestMethod.POST)
 public class TestController {
 
     @Autowired
