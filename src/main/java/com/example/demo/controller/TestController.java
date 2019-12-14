@@ -99,6 +99,7 @@ public class TestController {
     @GetMapping("/validacion")
     public List<MarResumen> validacion(Formulario formulario) throws ParseException {
         String ruc = formulario.getRuc();
+        System.out.println(ruc);
         return marResumenRepository.getValidacion(ruc);
     }
 
