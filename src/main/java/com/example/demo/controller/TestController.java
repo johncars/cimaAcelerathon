@@ -55,8 +55,8 @@ public class TestController {
     }
 
     @GetMapping("/formulario")
-    public void formulario(String args) {
-        System.out.println(args);
+    public void formulario(Formulario formulario) {
+        System.out.println(formulario.getCorreo());
     }
 
     @GetMapping("/sql")
@@ -67,4 +67,53 @@ public class TestController {
     public List<Ibkdata> prueba(String string) {
         return ibkdataRespository.findprueba(string);
     }
+}
+
+class Formulario {
+    private String correo;
+    private String dni;
+    private String celular;
+    private String ruc;
+    private String visa;
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getRuc() {
+        return ruc;
+    }
+
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
+    }
+
+    public String getVisa() {
+        return visa;
+    }
+
+    public void setVisa(String visa) {
+        this.visa = visa;
+    }
+
 }
