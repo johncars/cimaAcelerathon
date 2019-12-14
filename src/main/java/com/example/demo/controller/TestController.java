@@ -58,6 +58,11 @@ public class TestController {
 
     }
 
+    @GetMapping("/dialog")
+    public String dialog(String json) {
+        return "Holis";
+    }
+
     @GetMapping("/formulario")
     public void formulario(Formulario formulario) throws ParseException {
         String correo = formulario.getCorreo();
