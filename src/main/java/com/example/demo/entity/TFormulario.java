@@ -5,7 +5,7 @@ import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_FORMULARIO")
+@Table(name = "t_formulario")
 public class TFormulario {
 
     @Id
