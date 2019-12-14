@@ -63,7 +63,7 @@ public class TestController {
     @GetMapping("/dialog")
     public String dialog(String json) {
         System.out.println(json);
-        String res = "{ 'fulfillmentText': 'I dont know the weather but I hope it's good!'' }";
+        String res = "{ 'fulfillmentText': 'I dont know the weather but I hope its good!' }";
         return res;
     }
 
