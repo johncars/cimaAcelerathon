@@ -5,7 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import com.example.demo.repository.IbkdataRepository;
+import com.example.demo.repository.MarResumenRepository;
 import com.example.demo.entity.Ibkdata;
+import com.example.demo.entity.MarResumen;
 import com.example.demo.repository.IbkLoanCalendarRepository;
 import com.example.demo.entity.IbkLoanCalendar;
 import com.example.demo.repository.IbkLoanDebtRepository;
@@ -27,6 +29,9 @@ import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import com.google.auth.oauth2.AccessToken;
 
 @RestController
@@ -37,6 +42,8 @@ public class TestController {
     IbkdataRepository ibkdataRespository;
     @Autowired
     TFormularioRepository tFormularioRepository;
+    @Autowired
+    MarResumenRepository marResumenRepository;
 
     @GetMapping("/main")
     public String main(String json) {
@@ -60,6 +67,12 @@ public class TestController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/webhook")
+    public ResponseEntity<?> dialogFlowWebHook(@RequestBody String requestStr, HttpServletRequest servletRequest)
+            throws IOException {
+        return null;
+    }
+
     @GetMapping("/dialog")
     public String dialog(String json) {
         System.out.println(json);
@@ -81,6 +94,12 @@ public class TestController {
         java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
         TFormulario form = new TFormulario(ruc, dni, celular, correo, visa, sqlStartDate);
         tFormularioRepository.save(form);
+    }
+
+    @GetMapping("/validacion")
+    public List<MarResumen> validacion(Formulario formulario) throws ParseException {
+        String ruc = formulario.getRuc();
+        return marResumenRepository.getValidacion(ruc);
     }
 
     @GetMapping("/sql")
