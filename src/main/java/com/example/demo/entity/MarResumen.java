@@ -20,7 +20,8 @@ public class MarResumen {
     private String codigo;
     @Column(name = "MOTIVO_NO_APROBADO")
     private String motivo;
-
+    @Column(name = "CUENTA_NEGOCIO")
+    private String cn;
     public MarResumen() {
     }
 
@@ -70,6 +71,13 @@ public class MarResumen {
 
     public void setRuc(final String ruc) {
         this.ruc = ruc;
+    }
+    public String getCN() {
+        return cn;
+    }
+
+    public void setCN(final String cn) {
+        this.cn = cn;
     }
 
     public MarResumen(final String ruc, final String motivo, final String codigo, final String tasa, final String monto,
