@@ -60,6 +60,7 @@ public class TestController {
 
     @GetMapping("/dialog")
     public String dialog(String json) {
+        System.out.println(json);
         return "Holis";
     }
 
