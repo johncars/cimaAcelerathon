@@ -66,10 +66,11 @@ public class TestController {
         String visa = formulario.getVisa();
         String ruc = formulario.getRuc();
         String fecha = formulario.getfecha();
+        System.out.println(fecha);
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd");
         java.util.Date date = sdf1.parse(fecha);
-        java.sql.Date sqlStartDate = new java.sql.Date(date.getTime()); 
-        TFormulario form = new TFormulario(ruc,dni,celular,correo,visa,sqlStartDate);
+        java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
+        TFormulario form = new TFormulario(ruc, dni, celular, correo, visa, sqlStartDate);
         tFormularioRepository.save(form);
     }
 
