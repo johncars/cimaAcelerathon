@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "mar_resumen")
 public class MarResumen {
 
-    @Column(name = "RUC")
+    @Id
     private String ruc;
     @Column(name = "CUOTA")
     private String cuota;
