@@ -16,6 +16,8 @@ import com.example.demo.repository.TFormularioRepository;
 import com.example.demo.entity.TFormulario;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.json.Json;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -61,7 +63,8 @@ public class TestController {
     @GetMapping("/dialog")
     public String dialog(String json) {
         System.out.println(json);
-        return "Holis";
+        String res = "{ 'fulfillmentText': 'I dont know the weather but I hope it's good!'' }";
+        return res;
     }
 
     @GetMapping("/formulario")
